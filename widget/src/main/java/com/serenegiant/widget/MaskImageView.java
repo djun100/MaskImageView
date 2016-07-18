@@ -89,7 +89,10 @@ public class MaskImageView extends ImageView {
 		}
     	final int left =  (width - sz) / 2 + padding_left;
     	final int top = (height - sz) / 2 + padding_top;
-        mMaskBounds.set(left, top, left + sz, top + sz);
+
+		// FIXME: 2016/7/18 apply padding
+//        mMaskBounds.set(left, top, left + sz, top + sz);
+		mMaskBounds.set(0, 0, width, height);
 		mMaskedPaint.setMaskFilter(new BlurMaskFilter(sz, BlurMaskFilter.Blur.NORMAL));
 
         // keep view size(keep drawing rectangle)
